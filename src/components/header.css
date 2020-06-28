@@ -5,6 +5,7 @@
   align-items: flex-start;
   flex-wrap: nowrap;
   margin: 0 2em;
+  font-family: "Roboto Mono";
 }
 
 .menu-item {
@@ -13,6 +14,10 @@
   position: relative;
   display: block;
   width: auto;
+}
+
+.menu-item > h1 {
+  font-family: "Roboto Mono";
 }
 
 .menu-item:last-child {

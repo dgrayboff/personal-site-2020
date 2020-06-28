@@ -1,0 +1,15 @@
+@import '../styles/global.scss';
+
+.hero {
+  .title {
+    h1 {
+      font-family: $main-font;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: $main-font;
+      font-size: 1.25rem;
+    }
+  }
+}
