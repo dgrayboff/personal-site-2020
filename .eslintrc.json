@@ -19,5 +19,7 @@
         "react"
     ],
     "rules": {
+        "comma-dangle": "off",
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }]
     }
 }
