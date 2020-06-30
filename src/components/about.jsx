@@ -7,13 +7,13 @@ const About = () => {
 
   return (
     <div id="about">
-      <h3>About</h3>
+      <h3>Hi, I&lsquo;m David.</h3>
       <div className="content">
-        <p>{about1}</p>
         <p>
           <span>{about2}</span>
         </p>
         <p>{about3}</p>
+        <p>{about1}</p>
       </div>
     </div>
   );

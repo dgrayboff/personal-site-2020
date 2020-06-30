@@ -11,30 +11,30 @@ import useSiteMetadata from '../hooks/useSiteMetaData';
 
 import Header from './header';
 import './layout.css';
+import '../styles/global.scss';
 
 const Layout = ({ children }) => {
   const siteData = useSiteMetadata();
 
   return (
-    <>
+    <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 1100,
+        padding: '0 2em'
+      }}
+      className="layoutWrapper"
+    >
       <Header siteTitle={siteData.title} />
-      <div
-        style={{
-          margin: '0 2em',
-          maxWidth: 1100,
-          // padding: '0 1.0875rem 1.45rem',
-        }}
-      >
+      <div>
         <main>{children}</main>
-        <footer>
+        <footer style={{ fontFamily: 'Roboto Mono', marginTop: '1.45rem' }}>
           ©
-          {
-            ` ${new Date().getFullYear()} `
-          }
-          { ` ${siteData.title}` }
+          {` ${new Date().getFullYear()} `}
+          {` ${siteData.title}`}
         </footer>
       </div>
-    </>
+    </div>
   );
 };
 
