@@ -1,0 +1,24 @@
+@import '../styles/global.scss';
+
+#work {
+  border: 1px solid#E0EBE8;
+  padding: 2em;
+  color: #000;
+  font-family: $main-font;
+
+  h3 {
+    letter-spacing: 2.5px;
+    margin: 1rem 0 2.45rem 0;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-family: $main-font;
+    font-weight: 400;
+    line-height: 1.75rem;
+  }
+
+  p {
+    line-height: 1.75rem;
+  }
+}

@@ -20,6 +20,7 @@
     ],
     "rules": {
         "comma-dangle": "off",
-        "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}]
     }
 }

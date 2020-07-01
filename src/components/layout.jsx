@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       style={{
         margin: '0 auto',
         maxWidth: 1100,
-        padding: '0 2em'
+        padding: '0.75em 2em 2em 2em'
       }}
       className="layoutWrapper"
     >
