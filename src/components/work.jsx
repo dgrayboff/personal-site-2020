@@ -1,7 +1,7 @@
 import React from 'react';
-import './projects.scss';
+import './work.scss';
 
-const Projects = () => (
+const Work = () => (
   <div id="work">
     <h3>Work</h3>
     <div className="content">
@@ -11,8 +11,11 @@ const Projects = () => (
         more.
       </h4>
       <p>Clients' sites I've worked on:</p>
+      <div className="clients">
+        Clients
+      </div>
     </div>
   </div>
 );
 
-export default Projects;
+export default Work;
