@@ -13,20 +13,37 @@ import Img from 'gatsby-image';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "profpic_stripes_bw.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+// const Image = () => {
+//   const data = useStaticQuery(graphql`
+//     query {
+//       placeholderImage: file(relativePath: { eq: "profpic_stripes_bw.jpg" }) {
+//         childImageSharp {
+//           fluid(maxWidth: 300) {
+//             ...GatsbyImageSharpFluid
+//           }
+//         }
+//       }
+//     }
+//   `);
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
-};
+//   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+// };
 
-export default Image;
+// export default ({ data }) => (
+//   <div>
+//     <h1>Hello gatsby-image</h1>
+//     <Img fixed={data.file.childImageSharp.fixed} />
+//   </div>
+// );
+
+// export const query = graphql`
+//   query {
+//     file(relativePath: { eq: "images/profpic_stripes_bw.jpg" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1600, maxHeight: 800) {
+//           ...GatsbyImageSharpFluid_withWebp
+//         }
+//       }
+//     }
+//   }
+// `;
