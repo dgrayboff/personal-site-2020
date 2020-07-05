@@ -3,15 +3,16 @@ import { graphql, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import './work.scss';
 
-// export const clientImage = graphql`
-//   fragment clientImage on File {
-//     childImageSharp {
-//       fluid(maxWidth: 200, maxHeight: 200) {
-//         ...GatsbyImageSharpFluid
-//       }
-//     }
-//   }
-// `;
+export const clientImage = graphql`
+  fragment clientImage on File {
+    childImageSharp {
+      fluid(maxWidth: 150, quality: 100) {
+        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluidLimitPresentationSize
+      }
+    }
+  }
+`;
 
 // export const query = graphql`
 //   query {
@@ -40,23 +41,37 @@ const Work = () => (
       </h4>
       <p>Clients' sites I've worked on:</p>
       <div className="clients">
-        Clients
         <StaticQuery
           query={graphql`
             query {
+              ua: file(relativePath: { eq: "clients/ua-logo.png" }) {
+                ...clientImage
+              },
               amex: file(relativePath: { eq: "clients/amex-logo.png" }) {
-                childImageSharp {
-                  fluid(maxWidth: 175, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                    ...GatsbyImageSharpFluidLimitPresentationSize
-                  }
-                }
-              }
+                ...clientImage
+              },
+              avis: file(relativePath: { eq: "clients/avis-logo.jpg" }) {
+                ...clientImage
+              },
+              budget: file(relativePath: { eq: "clients/budget-logo.png" }) {
+                ...clientImage
+              },
+              barnes: file(relativePath: { eq: "clients/bn-logo.jpg" }) {
+                ...clientImage
+              },
+              uber: file(relativePath: { eq: "clients/uber-logo.png" }) {
+                ...clientImage
+              },
             }
           `}
           render={(data) => (
-            <div>
+            <div className="clients-image-wrapper">
               <Img fluid={data.amex.childImageSharp.fluid} />
+              <Img fluid={data.avis.childImageSharp.fluid} />
+              <Img fluid={data.budget.childImageSharp.fluid} />
+              <Img fluid={data.ua.childImageSharp.fluid} />
+              <Img fluid={data.uber.childImageSharp.fluid} />
+              <Img fluid={data.barnes.childImageSharp.fluid} />
             </div>
           )}
         />
