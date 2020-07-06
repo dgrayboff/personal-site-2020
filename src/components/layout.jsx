@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={siteData.title} />
       <div>
         <main>{children}</main>
-        <footer style={{ fontFamily: 'Roboto Mono', marginTop: '1.45rem' }}>
+        <footer style={{ fontFamily: 'Roboto Mono', marginTop: '1.45rem', fontSize: '0.9rem' }}>
           ©
           {` ${new Date().getFullYear()} `}
           {` ${siteData.title}`}

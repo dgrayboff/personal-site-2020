@@ -14,6 +14,32 @@ export const clientImage = graphql`
   }
 `;
 
+const clientImagesQuery = graphql`
+  query {
+    ua: file(relativePath: { eq: "clients/ua-logo.png" }) {
+      ...clientImage
+    }
+    amex: file(relativePath: { eq: "clients/amex-logo.png" }) {
+      ...clientImage
+    }
+    avis: file(relativePath: { eq: "clients/avis-logo.jpg" }) {
+      ...clientImage
+    }
+    budget: file(relativePath: { eq: "clients/budget-logo.png" }) {
+      ...clientImage
+    }
+    barnes: file(relativePath: { eq: "clients/bn-logo.jpg" }) {
+      ...clientImage
+    }
+    uber: file(relativePath: { eq: "clients/uber-logo.png" }) {
+      ...clientImage
+    }
+    suntrust: file(relativePath: { eq: "clients/suntrust-logo.png" }) {
+      ...clientImage
+    }
+  }
+`;
+
 const Work = () => (
   <div id="work">
     <h3>Work</h3>
@@ -26,32 +52,15 @@ const Work = () => (
       <p>Clients' sites I've worked on:</p>
       <div className="clients">
         <StaticQuery
-          query={graphql`
-            query {
-              ua: file(relativePath: { eq: "clients/ua-logo.png" }) {
-                ...clientImage
-              }
-              amex: file(relativePath: { eq: "clients/amex-logo.png" }) {
-                ...clientImage
-              }
-              avis: file(relativePath: { eq: "clients/avis-logo.jpg" }) {
-                ...clientImage
-              }
-              budget: file(relativePath: { eq: "clients/budget-logo.png" }) {
-                ...clientImage
-              }
-              barnes: file(relativePath: { eq: "clients/bn-logo.jpg" }) {
-                ...clientImage
-              }
-              uber: file(relativePath: { eq: "clients/uber-logo.png" }) {
-                ...clientImage
-              }
-            }
-          `}
+          query={clientImagesQuery}
           render={(data) => (
             <div className="clients-image-wrapper">
               {Object.keys(data).map((keyName) => (
-                <Img fluid={data[keyName].childImageSharp.fluid} key={keyName} />
+                <Img
+                  className="client-logo"
+                  fluid={data[keyName].childImageSharp.fluid}
+                  key={keyName}
+                />
               ))}
             </div>
           )}
