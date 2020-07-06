@@ -1,7 +1,14 @@
 @import '../styles/global.scss';
 
 .hero {
+  min-height: 90vh;
+  max-height: 100vh;
+  position: relative;
   .title {
+    position: absolute;
+    left: 0px;
+    top: 30%;
+    margin: 2em 0em;
     h1 {
       font-family: $main-font;
       text-transform: uppercase;
